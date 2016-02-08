@@ -19,7 +19,7 @@
 <body>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6 text-center col-lg-7">
+    <div class="col-md-6 text-center col-lg-offset-4 col-lg-4">
       <h1 class="text-center">Beetle Lock Puzzle Solver <br>
         for Morphopolis Level 5</h1>
     </div>
@@ -28,11 +28,11 @@
 </div>
 <div class="container">
   <div class="row text-center">
-    <div class="col-md-6 col-md-offset-3 col-lg-offset-0 col-lg-12"><strong>Switch the colours by clicking on the body parts. This solver will find a path to a solution with minimum length. </strong> <br>
-      There are 1.728.000 valid positions, 120 of them will solve this puzzle. No valid position leaves the game in an invalid state. <br>
+    <div class="col-md-6 col-md-offset-3 col-lg-offset-0 col-lg-12"><strong>Switch the colours by clicking/tapping on the body parts. This solver will find a path to a solution with minimum length. </strong> <br>
+      There are 1.728.000 valid positions, 120 of them will solve this puzzle. No valid position leaves the game in an unsolvable state. <br>
       Reaching the closest solution will require at most 16 steps on the shortest path (11-12 on average). 
       Reaching any postion will require at most 28 steps on the shortest path(18-19 on average). </div><br>
-      <noscript><strong><font color="red">JavaScript is required to run this solver. In your browser JavaScript is disabled or unsupported. Please enable JavaScript or try a different browser.</font></strong> </noscript>
+      <strong><font color="red"><noscript>JavaScript is required to run this solver. In your browser JavaScript is disabled or unsupported. Please enable JavaScript or try a different browser.</noscript></font></strong> 
   </div>
   <hr>
   <div class="row">
@@ -300,7 +300,7 @@ function solve(){
 	);*/
 	if (!start.isValid()){
 		console.log("invalid game");
-		document.getElementById("solutiontxt").firstChild.data = "<font colour=\"red\"> Error: invalid input.</font>";
+		document.getElementById("solutiontxt").innerHTML = "<font color=\"red\"> Error: invalid input.</font>";
 		return;	
 	}
 	{ //Selftest
@@ -335,7 +335,7 @@ function solve(){
 	}
 	
 	if (start.isWon()){
-		document.getElementById("solutiontxt").firstChild.data = "<strong>Solution: </strong> (0 steps) This game is already solved! <br>";
+		document.getElementById("solutiontxt").innerHTML = "<strong>Solution: </strong> (0 steps) This game is already solved! <br>";
 		return;
 	}
 	
@@ -358,11 +358,10 @@ function solve(){
 		for (var i=0; i<4; i++){
 			if (copies[i].isWon()){
 				var history = copies[i].history;
-				document.getElementById("solutiontxt").firstChild.data = "";
 				var soltxt = "<strong>Solution: </strong> ("+history.length+" steps) <br>";
 				for (var i=0; i<history.length; i++)
 					soltxt += "Step "+(i+1)+": " + history[i] + "<br>";
-				document.getElementById("solutiontxt").firstChild.data = soltxt;
+				document.getElementById("solutiontxt").innerHTML = soltxt;
 				console.log(copies[i].history);
 				console.log(copies[i].history.length);
 				return;
@@ -377,30 +376,13 @@ function solve(){
 </script>
 <hr>
 <div class="row">
-  <div class="text-center col-md-6 col-md-offset-3" id="solutiontxt"> <strong>Solution:</strong> (X steps)<br>
-    Step 1:<br>
-    Step 2:<br>
-    Step 3:<br>
-    Step 4:<br>
-    Step 5:<br>
-    Step 6:<br>
-    Step 7:<br>
-    Step 8:<br>
-    Step 9:<br>
-    Step 10:<br>
-    Step 11:<br>
-    Step 12:<br>
-    Step 13:<br>
-    Step 14:<br>
-    Step 15:<br>
-    Step 16:<br>
-  </div>
+  <div class="text-center col-md-6 col-md-offset-3" id="solutiontxt">  </div>
 </div>
 <hr>
 <div class="row">
   <div class="text-center col-md-6 col-md-offset-3">
-    <h4>TODO FOOTER</h4>
-    <p>Copyright &copy; 2016 &middot; All Rights Reserved &middot; <a href="http://yourwebsite.com/" >My Website</a></p>
+    <h4><!--TODO FOOTER--></h4>
+    <p>Copyright &copy; 2016 &middot; All Rights Reserved &middot;</p>
   </div>
 </div>
 <hr>
