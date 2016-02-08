@@ -1,72 +1,414 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morphopolis Level 5 Solver</title>
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Beetlepuzzlesolver : Solver for the beetle puzzle in level 5 of the game Morphopolis">
+<!-- Bootstrap -->
+<link href="css/bootstrap.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Beetlepuzzlesolver</title>
-  </head>
-
-  <body>
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/meekee7/beetlepuzzlesolver">View on GitHub</a>
-
-          <h1 id="project_title">Beetlepuzzlesolver</h1>
-          <h2 id="project_tagline">Solver for the beetle puzzle in level 5 of the game Morphopolis</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/meekee7/beetlepuzzlesolver/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/meekee7/beetlepuzzlesolver/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 text-center col-lg-7">
+      <h1 class="text-center">Beetle Lock Puzzle Solver <br>
+        for Morphopolis Level 5</h1>
     </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
-<a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
-
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
-
-<h3>
-<a id="designer-templates" class="anchor" href="#designer-templates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We’ve crafted some handsome templates for you to use. Go ahead and click 'Continue to layouts' to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved.</p>
-
-<h3>
-<a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Creating pages manually</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://help.github.com/articles/basic-writing-and-formatting-syntax/#mentioning-users-and-teams" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor’s GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-      </section>
+  </div>
+  <hr>
+</div>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-6 col-md-offset-3 col-lg-offset-0 col-lg-12"><strong>Switch the colours by clicking on the body parts. This solver will find a path to a solution with minimum length. </strong> <br>
+      There are 1.728.000 valid positions, 120 of them will solve this puzzle. No valid position leaves the game in an invalid state. <br>
+      Reaching the closest solution will require at most 16 steps on the shortest path (11-12 on average). 
+      Reaching any postion will require at most 28 steps on the shortest path(18-19 on average). </div><br>
+      <noscript><strong><font color="red">JavaScript is required to run this solver. In your browser JavaScript is disabled or unsupported. Please enable JavaScript or try a different browser.</font></strong> </noscript>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="text-center col-sm-4 col-sm-offset-4">
+      <div class="row"><strong>Swap Space</strong></div>
+      <div class="row">
+        <div class="col-sm-6"> Head </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="swapheadbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Neck </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="swapneckbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Body </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="swapbodybtn">Purple</button>
+        </div>
+      </div>
     </div>
-
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Beetlepuzzlesolver maintained by <a href="https://github.com/meekee7">meekee7</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
-      </footer>
+  </div>
+  <div class="row">
+    <div class="text-center col-sm-4 col-sm-offset-4">
+      <div class="row"><strong>Top</strong></div>
+      <div class="row">
+        <div class="col-sm-6"> Head </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="topheadbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Neck </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="topneckbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Body </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="topbodybtn">Purple</button>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="row">
+    <div class="text-center col-sm-4 col-sm-offset-2">
+      <div class="row"><strong>Left</strong></div>
+      <div class="row">
+        <div class="col-sm-6"> Head </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="leftheadbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Neck </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="leftneckbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Body </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="leftbodybtn">Purple</button>
+        </div>
+      </div>
+    </div>
+    <div class="text-center col-sm-4">
+      <div class="row"><strong>Right</strong></div>
+      <div class="row">
+        <div class="col-sm-6"> Head </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="rightheadbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Neck </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="rightneckbtn">Purple</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6"> Body </div>
+        <div class="col-sm-6">
+          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="rightbodybtn">Purple</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center col-sm-4 col-sm-offset-4">
+    <div class="row"><strong>Bottom</strong></div>
+    <div class="row">
+      <div class="col-sm-6"> Head </div>
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="bottomheadbtn">Purple</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"> Neck </div>
+      <div class="col-sm-6">
+        <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="bottomneckbtn">Purple</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6"> Body </div>
+      <div class="col-sm-6">
+       <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="bottombodybtn">Purple</button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="text-center col-md-6 col-md-offset-3">
+    <button type="button" class="btn btn-lg btn-primary" onClick="solve()">Solve Puzzle</button>
+  </div>
+</div>
+<script src="js/hashtable.js"></script>
+<script src="js/hashset.js"></script>
+<script>
+function Beetle(head, neck, wing){
+	this.head = head;
+	this.neck = neck;
+	this.wing = wing;
+}
 
-    
+Beetle.prototype.isMatch = function(){
+	return this.head == this.neck && this.neck == this.wing;
+}
 
-  </body>
+Beetle.prototype.equals = function(other){
+		return this.head == other.head && this.neck == other.neck && this.wing == other.wing;
+}
+
+Beetle.prototype.hashCode = function(){
+	return this.head + "," + this.neck + "," + this.wing;
+}
+
+Beetle.prototype.clone = function(){
+	return new Beetle(this.head, this.neck, this.wing);	
+}
+
+function Game(swapspace, top, right, bottom, left){
+	this.swapspace = swapspace;
+	this.top = top;
+	this.left = left;
+	this.right = right;
+	this.bottom = bottom;
+	this.history = [];
+}
+
+Game.prototype.clone = function(){
+	var clone = new Game(this.swapspace.clone(), this.top.clone(), this.right.clone(), this.bottom.clone(), this.left.clone());
+	clone.history = this.history.slice(0);
+	return clone;
+}
+
+Game.prototype.isValid = function(){
+	var objects = [this.swapspace, this.top, this.left, this.right, this.bottom];
+	for (var i=0; i<5; i++)
+		for (var j=i+1; j<5; j++){
+				var first = objects[i];
+				var second = objects[j];
+				if (first.head == second.head || first.neck == second.neck || first.wing == second.wing)
+					return false;
+			}
+	return true;
+}
+
+Game.prototype.equals = function(other){
+	return this.swapspace.equals(other.swapspace) && this.top.equals(other.top) && this.left.equals(other.left) && this.right.equals(other.right) && this.bottom.equals(other.bottom);		
+}
+
+Game.prototype.hashCode = function(){
+	return this.swapspace.hashCode() + ", " + this.top.hashCode() + ", " + this.left.hashCode() + ", " + this.right.hashCode() + ", " + this.bottom.hashCode();
+}
+
+Game.prototype.isWon = function(){
+	return this.swapspace.isMatch() && this.top.isMatch() && this.left.isMatch() && this.right.isMatch() && this.bottom.isMatch();
+}
+
+Game.prototype.swap = function(){
+	var temp = this.swapspace;
+	this.swapspace = this.top;
+	this.top = temp;
+	this.history.push("Swap");
+}
+
+Game.prototype.rothead = function(){
+	var temp = this.top.head;
+	this.top.head = this.left.head;
+	this.left.head = this.bottom.head;
+	this.bottom.head = this.right.head;
+	this.right.head = temp;
+	this.history.push("Head");	
+}
+
+Game.prototype.rotneck = function(){
+	var temp = this.top.neck;
+	this.top.neck = this.left.neck;
+	this.left.neck = this.bottom.neck;
+	this.bottom.neck = this.right.neck;
+	this.right.neck = temp;
+	this.history.push("Neck");	
+}
+
+Game.prototype.rotwing = function(){
+	var temp = this.top.wing;
+	this.top.wing = this.left.wing;
+	this.left.wing = this.bottom.wing;
+	this.bottom.wing = this.right.wing;
+	this.right.wing = temp;
+	this.history.push("Body");	
+}
+
+function switchColour(buttonID){
+	var oldcolour = document.getElementById(buttonID).firstChild.data;
+	if (oldcolour == "Purple")
+		newcolour = "Green";
+	else if (oldcolour == "Green")
+		newcolour = "Orange";
+	else if (oldcolour == "Orange")
+		newcolour = "Yellow"
+	else if (oldcolour == "Yellow")
+		newcolour = "Blue";
+	else if (oldcolour == "Blue")
+		newcolour = "Purple";
+	
+	document.getElementById(buttonID).firstChild.data = newcolour;
+	}
+function solve(){
+	var purple = "Purple";
+	var orange = "Orange";
+	var green = "Green";
+	var blue = "Blue";
+	var yellow = "Yellow";
+	
+	var inputfields = [
+	["swapheadbtn", "swapneckbtn", "swapbodybtn"],
+	["topheadbtn", "topneckbtn", "topbodybtn"],
+	["leftheadbtn", "leftneckbtn", "leftbodybtn"],
+	["rightheadbtn", "rightneckbtn", "rightbodybtn"],
+	["bottomheadbtn", "bottomneckbtn", "bottombodybtn"],
+	];
+	
+	var beetles = [];
+	for (var i=0; i<5; i++){
+		var colours = [];
+		for (var j=0; j<3; j++)
+			colours[j] = document.getElementById(inputfields[i][j]).firstChild.data;
+		beetles[i]=new Beetle(colours[0], colours[1], colours[2]);
+	}
+	
+	var start = new Game(beetles[0], beetles[1], beetles[2], beetles[3], beetles[4]); 
+	
+	/*var start = new Game(
+		new Beetle(purple,purple,blue),
+		new Beetle(green,orange,green),
+		new Beetle(blue,green,purple),
+		new Beetle(orange,blue,orange),	
+		new Beetle(yellow,yellow,yellow)
+	);*/
+	if (!start.isValid()){
+		console.log("invalid game");
+		document.getElementById("solutiontxt").firstChild.data = "<font colour=\"red\"> Error: invalid input.</font>";
+		return;	
+	}
+	{ //Selftest
+		var test = start.clone();
+		var testswap = test.clone();
+		testswap.swap();
+		testswap.swap();
+		if (!testswap.equals(test))
+			console.log("swaptest failed");
+		var testhead = test.clone();
+		testhead.rothead();
+		testhead.rothead();
+		testhead.rothead();
+		testhead.rothead();
+		if (!testhead.equals(test))
+			console.log("headtest failed");
+		var testneck = test.clone();
+		testneck.rotneck();
+		testneck.rotneck();
+		testneck.rotneck();
+		testneck.rotneck();
+		if (!testneck.equals(test))
+			console.log("necktest failed");
+		var testwing = test.clone();
+		testwing.rotwing();
+		testwing.rotwing();
+		testwing.rotwing();
+		testwing.rotwing();
+		if (!testwing.equals(test))
+			console.log("wingtest failed");
+		
+	}
+	
+	if (start.isWon()){
+		document.getElementById("solutiontxt").firstChild.data = "<strong>Solution: </strong> (0 steps) This game is already solved! <br>";
+		return;
+	}
+	
+	var queue = [start];
+	var knowngames = new HashSet();
+	knowngames.add(start);
+	
+	while(queue.length != 0){
+		//console.log(queue);
+		//console.log(knowngames.size());
+		
+		var current = queue.shift();
+		
+		var copies = [current.clone(), current.clone(), current.clone(), current.clone()];
+		copies[0].swap();
+		copies[1].rothead();
+		copies[2].rotneck();
+		copies[3].rotwing();	
+		
+		for (var i=0; i<4; i++){
+			if (copies[i].isWon()){
+				var history = copies[i].history;
+				document.getElementById("solutiontxt").firstChild.data = "";
+				var soltxt = "<strong>Solution: </strong> ("+history.length+" steps) <br>";
+				for (var i=0; i<history.length; i++)
+					soltxt += "Step "+(i+1)+": " + history[i] + "<br>";
+				document.getElementById("solutiontxt").firstChild.data = soltxt;
+				console.log(copies[i].history);
+				console.log(copies[i].history.length);
+				return;
+			} else if (!knowngames.contains(copies[i])){
+				queue.push(copies[i]);
+				knowngames.add(copies[i], null);
+			}	
+		}
+	}
+	
+	}
+</script>
+<hr>
+<div class="row">
+  <div class="text-center col-md-6 col-md-offset-3" id="solutiontxt"> <strong>Solution:</strong> (X steps)<br>
+    Step 1:<br>
+    Step 2:<br>
+    Step 3:<br>
+    Step 4:<br>
+    Step 5:<br>
+    Step 6:<br>
+    Step 7:<br>
+    Step 8:<br>
+    Step 9:<br>
+    Step 10:<br>
+    Step 11:<br>
+    Step 12:<br>
+    Step 13:<br>
+    Step 14:<br>
+    Step 15:<br>
+    Step 16:<br>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="text-center col-md-6 col-md-offset-3">
+    <h4>TODO FOOTER</h4>
+    <p>Copyright &copy; 2016 &middot; All Rights Reserved &middot; <a href="http://yourwebsite.com/" >My Website</a></p>
+  </div>
+</div>
+<hr>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="js/jquery-1.11.3.min.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.js"></script>
+</body>
 </html>
