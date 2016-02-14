@@ -39,6 +39,9 @@
     <div class="text-center col-sm-2 col-sm-offset-5">
       <div class="row"><strong>Swap Space</strong></div>
       <div class="row">
+        <div class="col-lg-6">&nbsp;</div>
+      </div>
+      <div class="row">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
           <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="swapheadbtn">Purple</button>
@@ -60,11 +63,16 @@
   </div>
   <div class="row">
     <div class="col-lg-6">&nbsp;</div>
+  </div>
+  <div class="row">
     <div class="col-lg-6">&nbsp;</div>
   </div>
   <div class="row">
     <div class="text-center col-sm-2 col-sm-offset-5">
       <div class="row"><strong>Top</strong></div>
+      <div class="row">
+        <div class="col-lg-6">&nbsp;</div>
+      </div>
       <div class="row">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
@@ -87,11 +95,16 @@
   </div>
   <div class="row">
     <div class="col-lg-6">&nbsp;</div>
+  </div>
+  <div class="row">
     <div class="col-lg-6">&nbsp;</div>
   </div>
   <div class="row">
     <div class="text-center col-sm-2 col-sm-offset-3">
       <div class="row"><strong>Left</strong></div>
+      <div class="row">
+        <div class="col-lg-6">&nbsp;</div>
+      </div>
       <div class="row">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
@@ -116,6 +129,9 @@
     <div class="text-center col-sm-2 col-sm-offset-0">
       <div class="row"><strong>Right</strong></div>
       <div class="row">
+        <div class="col-lg-6">&nbsp;</div>
+      </div>
+      <div class="row">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
           <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="rightheadbtn">Purple</button>
@@ -137,10 +153,15 @@
   </div>
   <div class="row">
     <div class="col-lg-6">&nbsp;</div>
+  </div>
+  <div class="row">
     <div class="col-lg-6">&nbsp;</div>
   </div>
   <div class="text-center col-sm-2 col-sm-offset-5">
     <div class="row"><strong>Bottom</strong></div>
+    <div class="row">
+      <div class="col-lg-6">&nbsp;</div>
+    </div>
     <div class="row">
       <div class="col-sm-6"> Head </div>
       <div class="col-sm-6">
@@ -352,7 +373,8 @@ function solve(){
 		document.getElementById("solutiontxt").innerHTML = "<strong>Solution: </strong> (0 steps) This game is already solved! <br>";
 		return;
 	}
-	
+	document.getElementById("solutiontxt").innerHTML = "Calculating, please wait. This should only take a couple of seconds.";
+		
 	var queue = [start];
 	var knowngames = new HashSet();
 	knowngames.add(start);
