@@ -214,7 +214,7 @@ Beetle.prototype.clone = function(){
 	return new Beetle(this.head, this.neck, this.wing);	
 }
 
-function Game(swapspace, top, right, bottom, left){
+function Game(swapspace, top, left, right, bottom){
 	this.swapspace = swapspace;
 	this.top = top;
 	this.left = left;
@@ -224,7 +224,7 @@ function Game(swapspace, top, right, bottom, left){
 }
 
 Game.prototype.clone = function(){
-	var clone = new Game(this.swapspace.clone(), this.top.clone(), this.right.clone(), this.bottom.clone(), this.left.clone());
+	var clone = new Game(this.swapspace.clone(), this.top.clone(), this.left.clone(), this.right.clone(), this.bottom.clone());
 	clone.history = this.history.slice(0);
 	return clone;
 }
