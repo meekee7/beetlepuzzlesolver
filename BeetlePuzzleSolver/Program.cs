@@ -96,6 +96,9 @@ namespace BeetlePuzzleSolver
             for (int i = 0; i < 5; i++)
                 for (int j = i + 1; j < 5; j++)
                 {
+                    //Check all beetle pairs
+                    //If there is a match in the body section of a pair, then that colour is duplicated
+                    //And the game is invalid
                     var first = games[i];
                     var second = games[j];
                     if (first.head == second.head || first.neck == second.neck || first.body == second.body)
