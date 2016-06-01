@@ -1,3 +1,4 @@
 # beetlepuzzlesolver
 Solver for the beetle puzzle in level 5 of the game Morphopolis. 
-All content is in the gh-pages branch
+You can find the Javascript solver in the gh-pages branch.
+You can find the C# solver in the CSharp branch.
