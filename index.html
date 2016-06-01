@@ -33,7 +33,12 @@
       There are 1.728.000 valid positions, 120 of them will solve this puzzle. No valid position leaves the game in an unsolvable state. <br>
       Reaching the closest solution will require at most 16 steps on the shortest path (11-12 on average). 
       Reaching any postion will require at most 28 steps on the shortest path (18-19 on average). </div><br>
-      <strong><font color="red"><noscript>JavaScript is required to run this solver. In your browser JavaScript is disabled or unsupported. Please enable JavaScript or try a different browser.</noscript></font></strong> 
+      <strong><font color="red"><noscript>JavaScript is required to run this solver. In your browser JavaScript is disabled or unsupported. Please enable JavaScript or try a different browser.</noscript></font></strong>
+           <button type="button" class="btn btn-default btn-purple" onClick="switchColour(this.id)" id="testpurplebtn">Purple</button>
+                <button type="button" class="btn btn-default btn-green" onClick="switchColour(this.id)" id="testgreenbtn">Green</button>
+                     <button type="button" class="btn btn-default btn-orange" onClick="switchColour(this.id)" id="testorangebtn">Orange</button>
+                          <button type="button" class="btn btn-default btn-yellow" onClick="switchColour(this.id)" id="testyellowbtn">Yellow</button>
+                               <button type="button" class="btn btn-default btn-blue" onClick="switchColour(this.id)" id="testbluebtn">Blue</button> 
   </div>
   <hr>
   <div class="row">
@@ -300,6 +305,7 @@ function switchColour(buttonID){
 	else if (oldcolour == "Blue")
 		newcolour = "Purple";
 	
+	document.getElementById(buttonID).firstChild["class"]="btn btn-default btn-"+newcolour.toLowerCase();
 	document.getElementById(buttonID).firstChild.data = newcolour;
 	}
 function solve(){
@@ -417,13 +423,19 @@ function solve(){
 </div>
 <hr>
 <div class="row">
+  <div class="text-center col-md-6 col-md-offset-3" > 
+  		<a href="http://mcro.org/morphopolis"> Morphopolis is a game by MCRO, released for various platforms. </a>
+  </div>
+</div>
+<hr>
+<div class="row">
   <div class="text-center col-md-6 col-md-offset-3">
     <h4><!--TODO FOOTER--></h4>
     <p>Copyright &copy; 2016 &middot; All Rights Reserved &middot;</p>
   </div>
 </div>
 <hr>
-</div>
+<!--</div>-->
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 <script src="js/jquery-1.11.3.min.js"></script> 
 

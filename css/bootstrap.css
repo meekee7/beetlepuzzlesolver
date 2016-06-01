@@ -3060,14 +3060,44 @@ fieldset[disabled] a.btn {
   pointer-events: none;
 }
 .btn-default {
-  color: #333;
+  color: #333; 
   background-color: #fff;
   border-color: #ccc;
 }
+.btn-purple {
+  color: #fff;
+  background-color: #990099;
+  border-color: #ccc;
+  width:75px;
+}
+.btn-green {
+  color: #fff;
+  background-color: #33cc33;
+  border-color: #ccc;
+  width:75px;
+}
+.btn-orange {
+  color: #333;
+  background-color: #ff9900;
+  border-color: #ccc;
+  width:75px;
+}
+.btn-yellow {
+  color: #333;
+  background-color: #ffff00;
+  border-color: #ccc;
+  width:75px;
+}
+.btn-blue {
+  color: #fff;
+  background-color: #0066cc;
+  border-color: #ccc;
+  width:75px;
+}
 .btn-default:focus,
 .btn-default.focus {
-  color: #333;
-  background-color: #e6e6e6;
+  color: #333; 
+  background-color: #e6e6e6; 
   border-color: #8c8c8c;
 }
 .btn-default:hover {
