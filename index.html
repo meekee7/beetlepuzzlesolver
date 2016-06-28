@@ -323,8 +323,6 @@ function switchColour(buttonID){
 	else if (oldcolour == "Blue")
 		newcolour = "Purple";
 	
-	var newstyle = "btn btn-"+newcolour.toLowerCase();
-	console.log(newstyle);
 	document.getElementById(buttonID).setAttribute("class","btn btn-"+newcolour.toLowerCase());
 	document.getElementById(buttonID).firstChild.data = newcolour;
 }
