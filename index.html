@@ -18,7 +18,7 @@
 </head>
 <body>
 <a href="https://github.com/meekee7/beetlepuzzlesolver/tree/gh-pages"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/82b228a3648bf44fc1163ef44c62fcc60081495e/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f7265645f6161303030302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_red_aa0000.png"></a>
-<div class="container-fluid">
+<div class="wrapper container-fluid">
   <div class="row">
     <div class="col-md-6 text-center col-lg-offset-4 col-lg-4">
       <h1 class="text-center">Beetle Lock Puzzle Solver <br>
@@ -34,11 +34,6 @@
       Reaching the closest solution will require at most 16 steps on the shortest path (11-12 on average). 
       Reaching any postion will require at most 28 steps on the shortest path (18-19 on average). </div><br>
       <strong><font color="red"><noscript>JavaScript is required to run this solver. In your browser JavaScript is disabled or unsupported. Please enable JavaScript or try a different browser.</noscript></font></strong>
-           <button type="button" class="btn btn-default btn-purple" onClick="switchColour(this.id)" id="testpurplebtn">Purple</button>
-                <button type="button" class="btn btn-default btn-green" onClick="switchColour(this.id)" id="testgreenbtn">Green</button>
-                     <button type="button" class="btn btn-default btn-orange" onClick="switchColour(this.id)" id="testorangebtn">Orange</button>
-                          <button type="button" class="btn btn-default btn-yellow" onClick="switchColour(this.id)" id="testyellowbtn">Yellow</button>
-                               <button type="button" class="btn btn-default btn-blue" onClick="switchColour(this.id)" id="testbluebtn">Blue</button> 
   </div>
   <hr>
   <div class="row">
@@ -50,19 +45,19 @@
       <div class="row table-bordered">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="swapheadbtn">Purple</button>
+          <button type="button" class="btn btn-purple" onClick="switchColour(this.id)" id="swapheadbtn">Purple</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Neck </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="swapneckbtn">Purple</button>
+          <button type="button" class="btn btn-purple" onClick="switchColour(this.id)" id="swapneckbtn">Purple</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Body </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="swapbodybtn">Purple</button>
+          <button type="button" class="btn btn-purple" onClick="switchColour(this.id)" id="swapbodybtn">Purple</button>
         </div>
       </div>
     </div>
@@ -82,19 +77,19 @@
       <div class="row table-bordered">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="topheadbtn">Purple</button>
+          <button type="button" class="btn btn-green" onClick="switchColour(this.id)" id="topheadbtn">Green</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Neck </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="topneckbtn">Purple</button>
+          <button type="button" class="btn btn-green" onClick="switchColour(this.id)" id="topneckbtn">Green</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Body </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="topbodybtn">Purple</button>
+          <button type="button" class="btn btn-green" onClick="switchColour(this.id)" id="topbodybtn">Green</button>
         </div>
       </div>
     </div>
@@ -114,19 +109,19 @@
       <div class="row table-bordered">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="leftheadbtn">Purple</button>
+          <button type="button" class="btn btn-orange" onClick="switchColour(this.id)" id="leftheadbtn">Orange</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Neck </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="leftneckbtn">Purple</button>
+          <button type="button" class="btn btn-orange" onClick="switchColour(this.id)" id="leftneckbtn">Orange</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Body </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="leftbodybtn">Purple</button>
+          <button type="button" class="btn btn-orange" onClick="switchColour(this.id)" id="leftbodybtn">Orange</button>
         </div>
       </div>
     </div>
@@ -140,19 +135,19 @@
       <div class="row table-bordered">
         <div class="col-sm-6"> Head </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="rightheadbtn">Purple</button>
+          <button type="button" class="btn btn-yellow" onClick="switchColour(this.id)" id="rightheadbtn">Yellow</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Neck </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="rightneckbtn">Purple</button>
+          <button type="button" class="btn btn-yellow" onClick="switchColour(this.id)" id="rightneckbtn">Yellow</button>
         </div>
       </div>
       <div class="row table-bordered">
         <div class="col-sm-6"> Body </div>
         <div class="col-sm-6">
-          <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="rightbodybtn">Purple</button>
+          <button type="button" class="btn btn-yellow" onClick="switchColour(this.id)" id="rightbodybtn">Yellow</button>
         </div>
       </div>
     </div>
@@ -171,19 +166,19 @@
     <div class="row table-bordered">
       <div class="col-sm-6"> Head </div>
       <div class="col-sm-6">
-        <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="bottomheadbtn">Purple</button>
+        <button type="button" class="btn btn-blue" onClick="switchColour(this.id)" id="bottomheadbtn">Blue</button>
       </div>
     </div>
     <div class="row table-bordered">
       <div class="col-sm-6"> Neck </div>
       <div class="col-sm-6">
-        <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="bottomneckbtn">Purple</button>
+        <button type="button" class="btn btn-blue" onClick="switchColour(this.id)" id="bottomneckbtn">Blue</button>
       </div>
     </div>
     <div class="row table-bordered">
       <div class="col-sm-6"> Body </div>
       <div class="col-sm-6">
-       <button type="button" class="btn btn-default" onClick="switchColour(this.id)" id="bottombodybtn">Purple</button>
+       <button type="button" class="btn btn-blue" onClick="switchColour(this.id)" id="bottombodybtn">Blue</button>
       </div>
     </div>
   </div>
@@ -292,6 +287,26 @@ Game.prototype.rotwing = function(){
 	this.history.push("Body");	
 }
 
+function switchColourTest(buttonID){
+	var oldcolour = document.getElementById(buttonID).firstChild.data;
+	if (oldcolour == "Purple")
+		newcolour = "Green";
+	else if (oldcolour == "Green")
+		newcolour = "Orange";
+	else if (oldcolour == "Orange")
+		newcolour = "Yellow"
+	else if (oldcolour == "Yellow")
+		newcolour = "Blue";
+	else if (oldcolour == "Blue")
+		newcolour = "Purple";
+	
+	//document.getElementById(buttonID).firstChild.removeAttribute("class");
+	//$("#testpurplebtn").removeClass("btn-purple");//.addClass("btn-green");
+	document.getElementById(buttonID).setAttribute("class","btn btn-"+newcolour.toLowerCase());
+	document.getElementById(buttonID).firstChild.data = newcolour;
+}
+
+
 function switchColour(buttonID){
 	var oldcolour = document.getElementById(buttonID).firstChild.data;
 	if (oldcolour == "Purple")
@@ -305,16 +320,13 @@ function switchColour(buttonID){
 	else if (oldcolour == "Blue")
 		newcolour = "Purple";
 	
-	document.getElementById(buttonID).firstChild["class"]="btn btn-default btn-"+newcolour.toLowerCase();
+	var newstyle = "btn btn-"+newcolour.toLowerCase();
+	console.log(newstyle);
+	document.getElementById(buttonID).setAttribute("class","btn btn-"+newcolour.toLowerCase());
 	document.getElementById(buttonID).firstChild.data = newcolour;
-	}
+}
+
 function solve(){
-	var purple = "Purple";
-	var orange = "Orange";
-	var green = "Green";
-	var blue = "Blue";
-	var yellow = "Yellow";
-	
 	var inputfields = [
 	["swapheadbtn", "swapneckbtn", "swapbodybtn"],
 	["topheadbtn", "topneckbtn", "topbodybtn"],
@@ -342,7 +354,7 @@ function solve(){
 	);*/
 	if (!start.isValid()){
 		console.log("invalid game");
-		document.getElementById("solutiontxt").innerHTML = "<font color=\"red\"> Error: invalid input.</font>";
+		document.getElementById("solutiontxt").innerHTML = "<font color=\"red\"> Error: Invalid input. Check each \"ring\" for duplicate colours.</font>";
 		return;	
 	}
 	{ //Selftest
@@ -402,11 +414,20 @@ function solve(){
 			if (copies[i].isWon()){
 				var history = copies[i].history;
 				var soltxt = "<strong>Solution: </strong> ("+history.length+" steps) <br>";
-				for (var i=0; i<history.length; i++)
-					soltxt += "Step "+(i+1)+": " + history[i] + "<br>";
+				var movestrings = {
+					Head:"Head <img src=\"images/head.svg\" style=\"width:2%\" onerror=\"this.src='images/head.png'; this.style=null; this.onerror = null;\" alt=\"Head\" title=\"Head\">",
+					Neck:"Neck <img src=\"images/neck.svg\" style=\"width:2%\" onerror=\"this.src='images/neck.png'; this.style=null; this.onerror = null;\" alt=\"Neck\" title=\"Neck\">",
+					Body:"Body <img src=\"images/body.svg\" style=\"width:2%\" onerror=\"this.src='images/body.png'; this.style=null; this.onerror = null;\" alt=\"Body\" title=\"Body\">",
+					Swap:"Swap <img src=\"images/swap.svg\" style=\"width:2%\" onerror=\"this.src='images/swap.png'; this.style=null; this.onerror = null;\" alt=\"Swap\" title=\"Swap\">"
+					}
+				for (var i=0; i<history.length; i++) {
+					soltxt += "Step "+(i+1)+": " + movestrings[history[i]] + "<br>";
+					if ((i+1) % 3 == 0)
+						soltxt += "<br>"
+					}
 				document.getElementById("solutiontxt").innerHTML = soltxt;
-				console.log(copies[i].history);
-				console.log(copies[i].history.length);
+				//console.log(copies[i].history);
+				//console.log(copies[i].history.length);
 				return;
 			} else if (!knowngames.contains(copies[i])){
 				queue.push(copies[i]);
@@ -419,7 +440,8 @@ function solve(){
 </script>
 <hr>
 <div class="row">
-  <div class="text-center col-md-6 col-md-offset-3" id="solutiontxt">  </div>
+  <div class="text-center col-md-6 col-md-offset-3" id="solutiontxt"> 
+   </div>
 </div>
 <hr>
 <div class="row">
